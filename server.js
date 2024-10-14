@@ -94,13 +94,13 @@ const sendNotifications = () => {
 };
 
 // Schedule notifications at fixed hours (e.g., every 2 hours starting from 00:00)
-// const hours = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22];
-// hours.forEach((hour) => {
-//   schedule.scheduleJob({ hour, minute: 0 }, sendNotifications);
-// });
+const hours = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22];
+hours.forEach((hour) => {
+  schedule.scheduleJob({ hour, minute: 0 }, sendNotifications);
+});
 
 // Schedule notifications every 2 minutes for testing purposes
-schedule.scheduleJob("*/2 * * * *", sendNotifications);
+// schedule.scheduleJob("*/2 * * * *", sendNotifications);
 
 // Schedule notifications every 10 seconds for testing purposes
 // schedule.scheduleJob("*/10 * * * * *", sendNotifications);
