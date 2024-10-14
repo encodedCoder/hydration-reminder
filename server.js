@@ -45,8 +45,8 @@ app.post("/subscribe", (req, res) => {
 
     // Send a welcome notification
     const payload = JSON.stringify({
-      title: "Welcome!",
-      body: `Welcome, ${name}! You have successfully subscribed to hydration reminders.`,
+      title: `Welcome, ${name}!`,
+      body: `You have successfully subscribed to hydration reminders.`,
       icon: "images/favicon.ico", // Path to your icon
       image: "images/encodedcoder.png", // Path to your image
     });
@@ -100,10 +100,10 @@ const sendNotifications = () => {
 // });
 
 // Schedule notifications every 2 minutes for testing purposes
-// schedule.scheduleJob("*/2 * * * *", sendNotifications);
+schedule.scheduleJob("*/2 * * * *", sendNotifications);
 
 // Schedule notifications every 10 seconds for testing purposes
-schedule.scheduleJob("*/10 * * * * *", sendNotifications);
+// schedule.scheduleJob("*/10 * * * * *", sendNotifications);
 
 const port = 5000;
 app.listen(port, () =>
